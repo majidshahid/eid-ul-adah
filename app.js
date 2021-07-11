@@ -1,18 +1,23 @@
-var date= new Date();
-var eidDay = new Date('19 july 2021');
-var dateMili = date.getTime();
-var eidDayMili = eidDay.getTime();
- var diff = eidDayMili - dateMili;
+
+
+
+
+
+
+  setInterval(function() { 
+    var countDownDate = new Date("Jul 20, 2021 ").getTime();        
+   var now = new Date().getTime();
+   var distance = countDownDate - now;
+
+   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+   console.log(days);
+   console.log(hours);
+   console.log(minutes);
+   document.getElementById('day').innerHTML =days;
+   document.getElementById('hours').innerHTML =hours;
+   document.getElementById('mint').innerHTML =minutes
  
-      var day =Math.round( diff/ (1000*60*60*24));
-       var hours = Math.round( (diff % (1000*60*60*24)) / (1000*60*60));
-       var min = Math.round((diff %  (1000*60*60)) /(1000*60) )
-    
-       console.log(min)
  
-function foo(){
-    document.getElementById('day').innerHTML +=day;
- document.getElementById('hours').innerHTML +=hours;
- document.getElementById('mint').innerHTML +=min
-}
-foo()
+ },1000)
